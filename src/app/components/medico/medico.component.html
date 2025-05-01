@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="header">
+    <h1 class="title">Médicos</h1>
+    <button class="btn-add" (click)="openModal()"><i class="bi bi-plus-lg plus-icon"></i>Agregar Médico</button>
+  </div>
+  <div class="table-responsive table-container">
+    <table class="table table-striped table-hover align-middle">
+      <thead class="tabla-header-custom">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Especialidad</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medico of medicos; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ medico.nombre }}</td>
+          <td>{{ medico.especialidad }}</td>
+          <td>
+            <button class="btn-sm btn-principal me-1" (click)="openModal(medico)">Editar</button>
+            <button class=" btn-sm btn-eliminar" (click)="deleteMedico(medico.id!)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" [ngClass]="{ 'show d-block': modalVisible }"
+    style="background-color: rgba(0,0,0,0.5);">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form #medicoForm="ngForm" (ngSubmit)="saveMedico()">
+          <div class="modal-header">
+            <h5 class="modal-title">{{ isEditing ? 'Editar Médico' : 'Agregar Médico' }}</h5>
+            <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="closeModal()"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" id="nombre" [(ngModel)]="selectedMedico.nombre" name="nombre" class="form-control"
+                required />
+            </div>
+            <div class="mb-3">
+              <label for="especialidad" class="form-label">Especialidad</label>
+              <input type="text" id="especialidad" [(ngModel)]="selectedMedico.especialidad" name="especialidad"
+                class="form-control" required />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+            <button type="submit" class="btn btn-primary">{{ isEditing ? 'Actualizar' : 'Guardar' }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

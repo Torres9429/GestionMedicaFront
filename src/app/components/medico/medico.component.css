@@ -1,0 +1,23 @@
+/*.header {
+    display: flex;
+    align-items: space-between;
+    flex-direction: row;
+}
+.btn-add {
+    background-color: #006A71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    margin-left: auto;
+    max-height: 40px;
+    margin-top: 10px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }*/
+  

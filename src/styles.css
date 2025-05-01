@@ -1,1 +1,203 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #EEEEEE;
+    font-family: 'Poppins', 'Arial', sans-serif;
+    color: #134B70;
+    margin: 0;
+    align-items: center;
+}
+
+.container {
+    margin: 1.5rem;
+    padding: 20px 30px;
+    border-radius: 12px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.btn-add {
+    background-color: #201E43;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    margin-left: auto;
+    max-height: 40px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #2c3e50;
+    text-align: left;
+    font-family: 'Poppins', 'Arial', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Navegación */
+nav {
+    background-color: #134B70;
+    color: #ffffff;
+    padding: 12px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 60px;
+  }
+  
+  .nav-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+  }
+  
+  .nav-brand i {
+    font-size: 1.4em;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    background-color: #201E43;
+    color: #f8f9fa;
+  }
+  
+  .nav-links a.active {
+    background-color: #201E43;
+    font-weight: 700;
+  }
+  
+  .nav-links a.active:hover {
+    background-color: #201E43;
+  }
+  
+.table-container {
+    padding: 10px;
+}
+
+.info-text p {
+    font-size: 1.2em;
+    color: #508C9B;
+    text-align: left;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0px;
+}
+
+  
+.table-header1 th {
+    background-color: #201E43;
+}
+
+.tabla-header-custom th {
+    background-color: #134B70 !important;
+    color: white !important;
+    font-weight: 600;
+    border-bottom: 2px solid #336D82;
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #134B70;
+    color: #ffffff;
+}
+
+.modal-footer {
+    background-color: #f1f1f1;
+}
+
+.btn-principal {
+    background-color: #508C9B;
+    color: white;
+    border: none;
+    margin-right: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #285666;
+}
+
+.btn-eliminar {
+    background-color: #6e0d0d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #110f32;
+}
+
+
+/* Botones en misma línea y con separación */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.plus-icon {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-right: 10px;
+}

@@ -1,0 +1,23 @@
+.filters-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px
+    
+}
+.filter label{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #495057;
+    max-height: 30px;
+}
+.filter select{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #495057;
+    max-height: 30px;
+}

@@ -1,0 +1,55 @@
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    align-content: center;
+}
+.welcome-card {
+    background-color: #fcfcfc;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 3px 9px 25px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 140px;
+    margin-bottom: 160px;
+    text-align: center;
+    border-left: 8px solid #134b70;
+    overflow: hidden;
+    align-self: center;
+
+}
+
+.welcome-title {
+    font-size: 2.2em;
+    color: #201e43;
+    margin-bottom: 20px;
+}
+
+.brand {
+    color: #134b70;
+}
+
+.welcome-text {
+    font-size: 1.1em;
+    margin-bottom: 35px;
+    color: #333;
+}
+
+.btn-go {
+    background-color: #134b70;
+    color: #ffffff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-go:hover {
+    background-color: #201e43;
+    transform: translateY(-2px);
+}
