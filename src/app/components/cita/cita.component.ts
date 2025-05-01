@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
   templateUrl: './cita.component.html',
   styleUrl: './cita.component.css'
 })
-export class CitaComponent implements OnInit  {
+export class CitaComponent implements OnInit {
   citas: Cita[] = [];
   selectedCita: Cita = { fecha: '', idPaciente: 0, idMedico: 0 };
   medicos: Medico[] = [];
@@ -22,12 +22,14 @@ export class CitaComponent implements OnInit  {
   modalVisible: boolean = false;
   idFiltro: number = 0;
   tipoFiltro: 'paciente' | 'medico' = 'paciente';
+  filtroMedico: string = '';
+  filtroPaciente: string = '';
 
   constructor(
     private citaService: CitaService,
     private medicoService: MedicoService,
     private pacienteService: PacienteService,
-    
+
   ) { }
 
   ngOnInit(): void {
@@ -108,7 +110,7 @@ export class CitaComponent implements OnInit  {
 
   closeModal(): void {
     this.modalVisible = false;
-    this.selectedCita = { fecha: '', idPaciente: 0, idMedico: 0 }; 
+    this.selectedCita = { fecha: '', idPaciente: 0, idMedico: 0 };
   }
 
   filtrarCitas() {
@@ -122,12 +124,17 @@ export class CitaComponent implements OnInit  {
       });
     }
   }
-  
   filterCitas(id: number | 0, tipo: 'paciente' | 'medico'): void {
+    // Resetear filtro dependiendo del tipo
+    if (tipo === 'medico') {
+      this.filtroPaciente = '';
+    } else {
+      this.filtroMedico = '';
+    }
+  
     if (tipo === 'medico' && id) {
       this.citaService.getCitasByMedico(id).subscribe(
         (citas) => {
-          console.log(citas);
           //@ts-ignore
           this.citas = citas.result;
         },
@@ -138,8 +145,7 @@ export class CitaComponent implements OnInit  {
     } else if (tipo === 'paciente' && id) {
       this.citaService.getCitasByPaciente(id).subscribe(
         (citas) => {
-          console.log(citas);
-//@ts-ignore
+          //@ts-ignore
           this.citas = citas.result;
         },
         (error) => {
@@ -147,19 +153,9 @@ export class CitaComponent implements OnInit  {
         }
       );
     } else {
-      this.getCitas(); 
+      this.getCitas();
     }
   }
+  
 
-  filtroMedico(id: number) {
-    this.idFiltro = id;
-    this.tipoFiltro = 'medico';
-    this.filtrarCitas();
-  }
-
-  filtroPaciente(id: number) {
-    this.idFiltro = id;
-    this.tipoFiltro = 'paciente';
-    this.filtrarCitas();
-  }
 }
